@@ -19,7 +19,7 @@ export default {
           required: true
       }
 
-  }, */
+  }, 
     computed: {
     countryname() {
         return this.$store.getters.getName;
@@ -33,7 +33,7 @@ export default {
         this.$store.dispatch('setName', val);
     }
 
-    },
+    },*/
 
   mounted() {
 
