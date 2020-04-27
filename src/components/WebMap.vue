@@ -58,7 +58,7 @@ export default {
                 url: "https://services7.arcgis.com/WSiUmUhlFx4CtMBB/arcgis/rest/services/FIRMS_Active_Fire_Points_Australia_Fires/FeatureServer/0"
             });
 
-             if(this.tagFromWebMap){   //needs to add more changes
+             if(this.tagFromWebMap){   //needs to add more code for Add Layer button
                 map.add(firePointsLayer);
             } 
            
@@ -118,7 +118,7 @@ export default {
                     });
 
                     currName = name;
-                   that.$store.dispatch('setName', name);
+                   that.$store.dispatch('setName', name);  //update the value to $store
 
 
                 } else {
