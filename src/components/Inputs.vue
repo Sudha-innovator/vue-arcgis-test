@@ -3,24 +3,32 @@
     <v-card-text>Inputs</v-card-text>
     <v-divider></v-divider>
     <input type='file' id='csv_file' name = 'csv_file' accept='.csv' outlined dense @change='loadCSV($event)'>
-    
-    <v-card>
+
+    <v-layout>
+        <v-flex md2 v-for="data in parse_header" :key="data">
+          <div>{{data}}</div>
+          <div v-for="csv in parse_csv" :key="parse_csv[csv]"> {{ csv[data] }}</div>
+        </v-flex>
+
+    </v-layout>
+
+<!--     <v-card>
             <table v-if="parse_csv">
             <thead>
             <tr>
-              <th v-for="data in parse_header" :key="parse_header[data]">
+              <th v-for="data in parse_header" :key="data">
                 {{ data }}            
               </th>
             </tr>
           </thead>
           <tr v-for="csv in parse_csv" :key="parse_csv[csv]">
-            <td v-for="value in parse_header" :key="parse_header[value]">
+            <td v-for="value in parse_header" :key="value">
               {{csv[value]}}
             </td>
           </tr>
           
         </table>
-    </v-card>
+    </v-card> -->
  </v-card>
 </template>
 
