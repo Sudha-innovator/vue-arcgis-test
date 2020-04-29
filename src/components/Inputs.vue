@@ -2,7 +2,7 @@
  <v-card class='fill-height'>
     <v-card-text>Inputs</v-card-text>
     <v-divider></v-divider>
-    <input type='file' id='csv_file' name = 'csv_file' label="Csv file input" outlined dense @change='loadCSV($event)'>
+    <input type='file' id='csv_file' name = 'csv_file' accept='.csv' outlined dense @change='loadCSV($event)'>
     
     <v-card>
             <table v-if="parse_csv">
