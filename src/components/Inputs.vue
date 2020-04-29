@@ -56,11 +56,6 @@ export default {
 
                     vm.parse_csv = vm.csvJSON(csv);
 
-                          console.log("parse header");
-      console.log(vm.parse_header);
-
-      console.log("parse csv");
-      console.log(vm.parse_csv);
                 };
                 reader.onerror = function(evt) {
                     if(evt.target.error.name == "NotReadableError") {
@@ -78,8 +73,7 @@ export default {
       var result = []
       var headers = lines[0].split(",")
       vm.parse_header = lines[0].split(",") 
-/*       console.log("header");
- console.log(vm.parse_header); */
+
       
       lines.map(function(line, indexLine){
         if (indexLine < 1) return // Jump header line
