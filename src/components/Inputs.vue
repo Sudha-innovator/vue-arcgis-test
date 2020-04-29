@@ -4,13 +4,13 @@
 
     <v-divider></v-divider> 
     <CsvUpload></CsvUpload>
-<test></test>
     
  </v-card>
 </template>
 
 <script>
 import CsvUpload from './CsvUpload'
+
 export default {
     name: 'inputs',
     components: {
