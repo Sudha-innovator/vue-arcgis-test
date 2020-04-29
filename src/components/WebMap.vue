@@ -54,14 +54,7 @@ export default {
                 basemap: 'topo-vector'
             });
             
-            var firePointsLayer = new FeatureLayer({
-                url: "https://services7.arcgis.com/WSiUmUhlFx4CtMBB/arcgis/rest/services/FIRMS_Active_Fire_Points_Australia_Fires/FeatureServer/0"
-            });
-
-             if(this.tagFromWebMap){   //needs to add more code for Add Layer button
-                map.add(firePointsLayer);
-            } 
-           
+        
 
             var worldCountries = new FeatureLayer({
                 url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/World_Countries_(Generalized)/FeatureServer/0",
