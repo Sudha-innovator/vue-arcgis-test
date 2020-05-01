@@ -1,14 +1,14 @@
 <template>
     <div>
-    <input type='file' id='csv_file' name = 'csv_file' accept='.csv' outlined dense @change='loadCSV($event)'>
+    <input type='file' id='csv_file' name = 'csv_file' accept='.csv'  @change='loadCSV($event)'>
 
-    <v-layout>
+<!--     <v-layout>
         <v-flex md2 v-for="data in parse_header" :key="data">
           <div>{{data}}</div>
-          <div v-for="csv in parse_csv" :key="parse_csv[csv]"> {{ csv[data] }}</div>
+          <div v-for="csv in parse_csv" :key="csv"> {{ csv[data] }}</div>
         </v-flex>
 
-    </v-layout>
+    </v-layout> -->
     </div>
 </template>
 <script>
@@ -33,6 +33,7 @@ export default {
                     var csv = event.target.result;
 
                     vm.parse_csv = vm.csvJSON(csv);
+                    vm.$emit('csv-data',vm.parse_csv);
 
                 };
                 reader.onerror = function(evt) {
@@ -52,7 +53,6 @@ export default {
       var headers = lines[0].split(",")
       vm.parse_header = lines[0].split(",") 
 
-      
       lines.map(function(line, indexLine){
         if (indexLine < 1) return // Jump header line
         
